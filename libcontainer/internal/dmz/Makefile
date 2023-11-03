@@ -1,5 +1,5 @@
 # Get GO, GOARCH and CC values for cross-compilation.
-include ../../cc_platform.mk
+include ../../../cc_platform.mk
 
 # List of GOARCH that nolibc supports, from:
 # 	https://go.dev/doc/install/source#environment (with GOOS=linux)

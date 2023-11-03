@@ -86,8 +86,8 @@ static-bin: runc-dmz
 
 .PHONY: runc-dmz
 runc-dmz:
-	rm -f libcontainer/dmz/runc-dmz
-	$(GO) generate -tags "$(BUILDTAGS)" ./libcontainer/dmz
+	rm -f libcontainer/internal/dmz/runc-dmz
+	$(GO) generate -tags "$(BUILDTAGS)" ./libcontainer/internal/dmz
 
 .PHONY: releaseall
 releaseall: RELEASE_ARGS := "-a 386 -a amd64 -a arm64 -a armel -a armhf -a ppc64le -a riscv64 -a s390x"
@@ -188,7 +188,7 @@ install-man: man
 
 .PHONY: clean
 clean:
-	rm -f runc runc-* libcontainer/dmz/runc-dmz
+	rm -f runc runc-* libcontainer/internal/dmz/runc-dmz
 	rm -f contrib/cmd/fs-idmap/fs-idmap
 	rm -f contrib/cmd/recvtty/recvtty
 	rm -f contrib/cmd/sd-helper/sd-helper
